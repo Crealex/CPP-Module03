@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(const ClapTrap &cpy): _name(cpy._name), _hitPoints(cpy._hitPo
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << RED << "Destructor of " << ITALIC << this->_name << RESET << RED << " called" << RESET << std::endl;
+	std::cout << RED << "Destructor of " << ITALIC << this->_name << RESET << RED << " called ( ClapTrap)" << RESET << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
