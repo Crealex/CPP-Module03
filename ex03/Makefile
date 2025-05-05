@@ -1,5 +1,5 @@
-NAME = ScavTrap
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME = DiamondTrap
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp  FragTrap.cpp
 OBJS	=	${SRCS:%.c=${OBJDIR}/%.o}
 CFLAGS = -Werror -Wextra -Wall -std=c++98
 CC = c++

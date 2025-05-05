@@ -1,4 +1,6 @@
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 #include "ClapTrap.hpp"
 
 class ScavTrap: public ClapTrap
@@ -11,7 +13,9 @@ class ScavTrap: public ClapTrap
 		ScavTrap(const ScavTrap& cpy);
 		~ScavTrap();
 		ScavTrap &operator=(const ScavTrap& rhs);
+		void attack(const std::string& target);
 		void guardGate();
-		void attack(const std::string &target);
 		void displayAttributs();
 };
+
+#endif

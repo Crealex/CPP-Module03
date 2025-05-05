@@ -31,7 +31,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
 		this->_energyPoints = rhs._energyPoints;
 		this->_attackDamage = rhs._attackDamage;
 	}
-	std::cout << "Assignment operator called for " << ITALIC << rhs._name << RESET << std::endl;
+	std::cout << "Assignment operator ClapTrap called for " << ITALIC << rhs._name << RESET << std::endl;
 	return (*this);
 }
 

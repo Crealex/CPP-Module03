@@ -31,6 +31,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &rhs)
 {
+	std::cout << "Assignment operator ScavTrap called for " << ITALIC << rhs._name << RESET << std::endl;
 	this->_name = rhs._name;
 	this->_hitPoints = rhs._hitPoints;
 	this->_energyPoints = rhs._energyPoints;
@@ -46,7 +47,7 @@ void ScavTrap::attack(const std::string &target)
 		return ;
 	}
 	this->_energyPoints--;
-	std::cout << LIGHT_RED << BOLD << target << " take " << this->_attackDamage << " damage points from " << ITALIC << this->_name << RESET << " (ScavTrap)" << std::endl;
+	std::cout << LIGHT_RED << BOLD << target << " take " << this->_attackDamage << " damage points from " << ITALIC << this->_name << RESET << "(ScavTrap)" << std::endl;
 }
 
 void ScavTrap::guardGate()
