@@ -5,23 +5,21 @@
 #include "colors.h"
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(): _name("Default FragTrap"), FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap(): ClapTrap("Default DiamondTrap_clap_name"),FragTrap(), ScavTrap(), _name("Default DiamondTrap")
 {
-	ClapTrap::_name = _name + "_clap_name";
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->_hitPoints = 100; // from FragTrap
+	this->_attackDamage = 30; // from FragTrap
 	std::cout << GREEN << "Default DiamondTrap constructor called" << RESET << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name): _name(name), FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap(), _name(name)
 {
-	ClapTrap::_name = _name + "_clap_name";
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->_hitPoints = 100; // From FragTrap
+	this->_attackDamage = 30; // from FragTrap
 	std::cout << LIGHT_GREEN << "DiamondTrap constructor called with the name " << ITALIC << this->_name << RESET << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &cpy): ScavTrap(cpy._name)
+DiamondTrap::DiamondTrap(const DiamondTrap &cpy): ClapTrap(cpy._name + "_clap_name") , FragTrap(), ScavTrap(cpy._name)
 {
 	this->_attackDamage = cpy._attackDamage;
 	this->_hitPoints = cpy._hitPoints;
@@ -43,4 +41,22 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &rhs)
 	this->_energyPoints = rhs._energyPoints;
 	std::cout << "Assignment operator DiamdonTrap called for " << ITALIC << this->_name << RESET << std::endl;
 	return (*this);
+}
+
+void DiamondTrap::whoAmI()
+{
+	std::cout << "Name: " << this->_name << RESET << std::endl;
+	std::cout << "Clap_name: " << ClapTrap::_name << std::endl;
+}
+
+void DiamondTrap::displayAttributs()
+{
+	std::cout << "-*-*-*-*-*-*-*-*-*-*-" << std::endl;
+	std::cout << "DiamondTrap" << std::endl;
+	std::cout << BOLD << "Name: " << this->_name << RESET << std::endl;
+	std::cout << "Clap_name: " << ClapTrap::_name << std::endl;
+	std::cout << "Hit points: " << this->_hitPoints << std::endl;
+	std::cout << "Energy points: " << this->_energyPoints << std::endl;
+	std::cout << "Attack damage: " << this->_attackDamage << std::endl;
+	std::cout << "-*-*-*-*-*-*-*-*-*-*-" << std::endl;
 }

@@ -2,8 +2,11 @@
 #include "colors.h"
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap(): ClapTrap("Default FragTrap")
 {
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 	std::cout << GREEN << "Default FragTrap constructor called" << RESET << std::endl;
 }
 

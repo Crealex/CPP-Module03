@@ -1,22 +1,19 @@
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	ClapTrap clappy("Clappy");
-	ClapTrap clappou("Clappou");
-	std::cout << "Creating a ScavTrap object..." << std::endl;
-	FragTrap fragou("Fragou");
+	std::cout << "Creating a DiamondTrap object..." << std::endl;
+	DiamondTrap diamou("Diamou");
+	DiamondTrap diamo("Diamo");
 
-
-	fragou.displayAttributs();
-	clappy.displayAttributs();
-	clappou.displayAttributs();
-	for (int i = 0; i <= 10; i++)
-		clappy.attack("Clappou");
-	for (int i = 0; i <= 10; i++)
-		clappou.beRepaired(2);
-	fragou.highFivesGuys();
-	clappy.displayAttributs();
+	diamou.displayAttributs();
+	diamo.displayAttributs();
+	diamo.attack("Molon");
+	diamo.displayAttributs();
+	std::cout << "Assigmement Diamou to diamo" << std::endl;
+	diamou = diamo;
+	std::cout << "new Diamou :" << std::endl;
+	diamou.displayAttributs();
+	diamo.whoAmI();
 }

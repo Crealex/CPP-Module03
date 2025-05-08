@@ -3,9 +3,12 @@
 #include "ScavTrap.hpp"
 #include "iostream"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap(): ClapTrap("ScavTrap default")
 {
 	std::cout << GREEN << "Default ScavTrap constructor called" << RESET << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
@@ -47,7 +50,7 @@ void ScavTrap::attack(const std::string &target)
 		return ;
 	}
 	this->_energyPoints--;
-	std::cout << LIGHT_RED << BOLD << target << " take " << this->_attackDamage << " damage points from " << ITALIC << this->_name << RESET << "(ScavTrap)" << std::endl;
+	std::cout << LIGHT_RED << BOLD << target << " take " << this->_attackDamage << " damage points from " << ITALIC << this->_name << RESET << " (ScavTrap)" << std::endl;
 }
 
 void ScavTrap::guardGate()
