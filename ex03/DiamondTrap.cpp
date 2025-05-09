@@ -45,6 +45,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &rhs)
 
 void DiamondTrap::whoAmI()
 {
+	std::cout << BOLD << "WhoAmI called" << RESET <<std::endl;
 	std::cout << "Name: " << this->_name << RESET << std::endl;
 	std::cout << "Clap_name: " << ClapTrap::_name << std::endl;
 }

@@ -61,7 +61,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	this->_hitPoints += amount;
 	this->_energyPoints--;
-	std::cout << LIGHT_GREEN << ITALIC << this->_name << RESET << LIGHT_GREEN << " repairs itself from " << amount << " hitPoints" << std::endl;
+	std::cout << LIGHT_GREEN << ITALIC << this->_name << RESET << LIGHT_GREEN << " repairs itself from " << amount << " hitPoints" << RESET << std::endl;
 }
 
 void ClapTrap::displayAttributs()

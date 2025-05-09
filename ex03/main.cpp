@@ -11,8 +11,12 @@ int main()
 	diamo.displayAttributs();
 	diamo.attack("Molon");
 	diamo.displayAttributs();
-	std::cout << "Assigmement Diamou to diamo" << std::endl;
+	std::cout << "Assigmement Diamo to diamou" << std::endl;
 	diamou = diamo;
+	diamou.takeDamage(10);
+	diamou.displayAttributs();
+	diamou.beRepaired(10);
+	diamou.displayAttributs();
 	std::cout << "new Diamou :" << std::endl;
 	diamou.displayAttributs();
 	diamo.whoAmI();
